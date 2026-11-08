@@ -1,0 +1,5 @@
+<Solution>
+  <Project Path="Benchmarks/Benchmarks.csproj" Id="1a993924-7b11-4e73-b68f-4a48810596bd" />
+  <Project Path="PGP.VFS.TestApp/PGP.VFS.TestApp.csproj" />
+  <Project Path="PGP.VFS/PGP.VFS.csproj" />
+</Solution>

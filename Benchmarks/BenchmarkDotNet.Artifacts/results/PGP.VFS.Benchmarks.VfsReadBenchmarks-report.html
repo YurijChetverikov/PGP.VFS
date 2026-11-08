@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+<meta charset='utf-8' />
+<title>PGP.VFS.Benchmarks.VfsReadBenchmarks-20261108-191036</title>
+
+<style type="text/css">
+	table { border-collapse: collapse; display: block; width: 100%; overflow: auto; }
+	td, th { padding: 6px 13px; border: 1px solid #ddd; text-align: right; }
+	tr { background-color: #fff; border-top: 1px solid #ccc; }
+	tr:nth-child(even) { background: #f8f8f8; }
+</style>
+</head>
+<body>
+<pre><code>
+BenchmarkDotNet v0.15.8, Windows 10 (10.0.19045.6456/22H2/2022Update)
+13th Gen Intel Core i5-13450HX 2.40GHz, 1 CPU, 16 logical and 10 physical cores
+  [Host] : .NET 10.0.13, X64 NativeAOT x86-64-v3
+</code></pre>
+<pre><code>Toolchain=InProcessNoEmitToolchain  IterationCount=10  WarmupCount=5  
+</code></pre>
+
+<table>
+<thead><tr><th>Method                           </th><th>Mean   </th><th>Error </th><th>StdDev</th><th>Gen0</th><th>Allocated</th>
+</tr>
+</thead><tbody><tr><td>GetFileStream_Open_Compressed_1MB</td><td>233.51 ns</td><td>9.716 ns</td><td>6.427 ns</td><td>0.0236</td><td>248 B</td>
+</tr><tr><td>GetFileStream_Open_Uncompressed_1MB</td><td>39.19 ns</td><td>0.515 ns</td><td>0.340 ns</td><td>0.0099</td><td>104 B</td>
+</tr><tr><td>GetFileStream_FullRead_Compressed_1MB</td><td>259,389.70 ns</td><td>7,136.039 ns</td><td>4,720.048 ns</td><td>-</td><td>249 B</td>
+</tr><tr><td>GetFileStream_FullRead_Uncompressed_1MB</td><td>77,471.64 ns</td><td>495.152 ns</td><td>327.512 ns</td><td>-</td><td>104 B</td>
+</tr><tr><td>GetFile_Lookup</td><td>28.06 ns</td><td>0.033 ns</td><td>0.022 ns</td><td>-</td><td>-</td>
+</tr></tbody></table>
+</body>
+</html>

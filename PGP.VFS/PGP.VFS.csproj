@@ -1,0 +1,43 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Library</OutputType>
+    <TargetFramework>net10.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+	<PublishAot>true</PublishAot>
+    <InvariantGlobalization>true</InvariantGlobalization>
+	<DefaultItemExcludes>$(DefaultItemExcludes);Tests\**</DefaultItemExcludes>
+	
+    <!-- Метаданные NuGet -->
+    <PackageId>PGP.VFS</PackageId>
+    <Version>1.0.1</Version>
+    <Authors>Yurij Chetverikov</Authors>
+    <Description>Virtual File System with compression. Developed for game engine</Description>
+	
+	<!-- ===== Настройки генерации ===== -->
+    <!-- Генерировать .nupkg при каждой сборке в Release (удобно) -->
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    
+    <!-- Включать отладочные символы в отдельный .snupkg пакет -->
+    <IncludeSymbols>true</IncludeSymbols>
+    <SymbolPackageFormat>snupkg</SymbolPackageFormat>
+	
+	<GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+	<GenerateTargetFrameworkAttribute>false</GenerateTargetFrameworkAttribute>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Google.FlatBuffers" Version="25.2.10" />
+    <PackageReference Include="Microsoft.Extensions.Logging" Version="10.0.14" />
+    <PackageReference Include="Microsoft.Extensions.Logging.Console" Version="10.0.14" />
+    <PackageReference Include="ZstdSharp.Port" Version="0.8.8" />
+	<PackageReference Include="Microsoft.DotNet.ILCompiler" Version="10.0.14" />
+
+    <Compile Include="..\..\PGPEngine\**\*.cs">
+      <!-- Ссылка (Link) определяет, как папка будет выглядеть в обозревателе решений (Solution Explorer) -->
+      <Link>Flat Buffers Generated\%(RecursiveDir)%(Filename)%(Extension)</Link>
+    </Compile>
+  </ItemGroup>
+
+</Project>
