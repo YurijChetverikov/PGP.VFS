@@ -117,18 +117,10 @@ await vfs.DisposeAsync();
 Дефрагментация проходит по пакам, собирает "живые" файлы подряд, записывает их в буферный файл, после чего старый пак удаляется, а буферный переименовывается.
 Если процесс прервется, VFS при следующем старте продолжит дефрагментацию, начиная с пака, на котором процесс остановился.
 
-## Known issues
-
-### When connected to DS4Windows, it works incorrectly and disables the controller a second after it’s detected
-
-I don't know why this happens. It is due to some collision between DS4Windows and my utility.
-But we can fix this by occasionally reading the controller's buffer. 
-
-I hardcoded it so that the program reads a report from the controller’s buffer every 10th payload it sends if `ReadBuffer` is `true`.
-
 ## Компиляция
 
 * Framework: .NET 10.0
 * Dependencies:
   ** ZstdSharp 0.8.8
   ** Google.FlatBuffers 25.2.10
+  ** FlatBuffers schemas [PGP.Shared](https://github.com/YurijChetverikov/PGP_Shared)
