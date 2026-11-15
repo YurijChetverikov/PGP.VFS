@@ -70,8 +70,8 @@ await vfs.DisposeAsync();
 * Чтение данных происходит напрямую с диска в память программы без промежуточных аллокаций
 * Реализован безопасный процесс дефрагментации с исспользованием буферного файла
 * Есть 2 режима работы:
-  ** `SOURCES` - режим, в котором чтение ассетов происходит из исходников, а не из паков. Нужен для разработки, чтобы каждый раз не ждать сборки VFS 
-  ** `PACKS` - режим, в котором чтение ассетов происходит из паков
+  * `SOURCES` - режим, в котором чтение ассетов происходит из исходников, а не из паков. Нужен для разработки, чтобы каждый раз не ждать сборки VFS 
+  * `PACKS` - режим, в котором чтение ассетов происходит из паков
 
 ## Производительность 
 
@@ -121,6 +121,6 @@ await vfs.DisposeAsync();
 
 * Framework: .NET 10.0
 * Dependencies:
-  ** ZstdSharp 0.8.8
-  ** Google.FlatBuffers 25.2.10
-  ** FlatBuffers schemas [PGP.Shared](https://github.com/YurijChetverikov/PGP_Shared)
+  * ZstdSharp 0.8.8
+  * Google.FlatBuffers 25.2.10
+  * FlatBuffers schemas [PGP.Shared](https://github.com/YurijChetverikov/PGP_Shared)
